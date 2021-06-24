@@ -1,0 +1,49 @@
+Style/StringLiterals:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Naming/MethodParameterName:
+  MinNameLength: 1
+
+Style/Next:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 180
+
+Style/GuardClause:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+  CountAsOne: ["array", "hash"]
+
+Metrics/ClassLength:
+  Max: 150
+  CountAsOne: ["array", "hash"]
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/WordArray:
+  EnforcedStyle: brackets
+
+Style/RedundantReturn:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/ParenthesesAroundCondition:
+  AllowInMultilineConditions: true
