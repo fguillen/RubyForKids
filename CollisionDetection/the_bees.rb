@@ -1,6 +1,44 @@
 # We import the "gosu" library
 require "gosu"
 
+# This is the main class the Game class
+class Game < Gosu::Window
+  WIDTH = 1000
+  HEIGHT = 800
+
+  def initialize
+    super WIDTH, HEIGHT # the size of the Window
+
+    @bee = Bee.new # our "bee" instance
+    @person = Person.new(@bee) # notice that I pass the "bee" instance to the "person" instance in the constructor
+    @font = Gosu::Font.new(20, name: Gosu.default_font_name)
+  end
+
+  def update
+    @bee.update
+    @person.update
+  end
+
+  def draw
+    draw_background
+    @bee.draw
+    @person.draw
+    draw_instructions
+  end
+
+  def draw_background
+    # Drawing a background color
+    # See the doc of Gosu::Color constructor: https://www.rubydoc.info/github/gosu/gosu/master/Gosu%2FColor:initialize
+    Gosu.draw_rect(0, 0, WIDTH, HEIGHT, Gosu::Color.new(255, 254, 197, 187), 0)
+  end
+
+  def draw_instructions
+    # See the documentation for Gosu::Font.draw_text:
+    # https://www.rubydoc.info/github/gosu/gosu/master/Gosu%2FFont:draw_text
+    @font.draw_text("Use the cursors to move the bee and scare the person", 400, 750, 0, 1, 1, Gosu::Color::BLACK)
+  end
+end
+
 # The Bee class
 class Bee
   def initialize
@@ -20,7 +58,7 @@ class Bee
     @image.draw(@x, @y, 20)
 
     # You can uncomment this line to see the Bee square
-    # debug
+    debug
   end
 
   # The debug method to see the box
@@ -100,7 +138,7 @@ class Person
     end
 
     # You can uncomment this line to see the Person square
-    # debug
+    debug
   end
 
   # The debug method to see the box
@@ -125,43 +163,7 @@ class Person
   end
 end
 
-# This is the main class the Game class
-class Game < Gosu::Window
-  WIDTH = 1000
-  HEIGHT = 800
 
-  def initialize
-    super WIDTH, HEIGHT # the size of the Window
-
-    @bee = Bee.new # our "bee" instance
-    @person = Person.new(@bee) # notice that I pass the "bee" instance to the "person" instance in the constructor
-    @font = Gosu::Font.new(20, name: Gosu.default_font_name)
-  end
-
-  def update
-    @bee.update
-    @person.update
-  end
-
-  def draw
-    draw_background
-    @bee.draw
-    @person.draw
-    draw_instructions
-  end
-
-  def draw_background
-    # Drawing a background color
-    # See the doc of Gosu::Color constructor: https://www.rubydoc.info/github/gosu/gosu/master/Gosu%2FColor:initialize
-    Gosu.draw_rect(0, 0, WIDTH, HEIGHT, Gosu::Color.new(255, 254, 197, 187), 0)
-  end
-
-  def draw_instructions
-    # See the documentation for Gosu::Font.draw_text:
-    # https://www.rubydoc.info/github/gosu/gosu/master/Gosu%2FFont:draw_text
-    @font.draw_text("Use the cursors to move the bee and scare the person", 400, 750, 0, 1, 1, Gosu::Color::BLACK)
-  end
-end
 
 # Start the game
 Game.new.show
