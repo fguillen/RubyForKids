@@ -28,6 +28,7 @@ class Game < Gosu::Window
 
   def draw_background
     # Drawing a background color
+    # See the doc of Gosu.draw_rect: https://www.rubydoc.info/github/gosu/gosu/master/Gosu.draw_rect
     # See the doc of Gosu::Color constructor: https://www.rubydoc.info/github/gosu/gosu/master/Gosu%2FColor:initialize
     Gosu.draw_rect(0, 0, WIDTH, HEIGHT, Gosu::Color.new(255, 254, 197, 187), 0)
   end
