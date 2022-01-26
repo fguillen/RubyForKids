@@ -63,28 +63,15 @@ class Game < Gosu::Window
     @mouth_actual.draw(0, 0, 0, 24, 24)
     @eyes_actual.draw(0, 0, 0, 24, 24)
     @feet_actual.draw(0, 0, 0, 24, 24)
-
-    # if @make_picture_requested
-    #   make_picture()
-    # end
   end
 
   def make_picture
-    puts "Making picture"
-
-    image = Gosu.render(WIDTH, HEIGHT, retro: false) do
-      draw
-    end
+    image =
+      Gosu.render(WIDTH, HEIGHT, retro: false) do
+        draw()
+      end
 
     image.save("CowNTF_#{Time.now.to_i}.png")
-
-
-    # Gosu.gl do
-    #   @pixels = Gl.glReadPixels(0, 0, WIDTH, HEIGHT, Gl::GL_RGBA, Gl::GL_UNSIGNED_BYTE)
-    # end
-    # @picture = ChunkyPNG::Image.from_rgba_stream(WIDTH, HEIGHT, @pixels).flip
-    # @picture.save("CowNTF_#{Time.now.to_i}.png")
-    # @make_picture_requested = false
   end
 
   def draw_frame
