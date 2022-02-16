@@ -29,15 +29,15 @@ class Game < Gosu::Window
     @feet.push(Gosu::Image.new("#{__dir__}/assets/feet_02.png", { retro: true }))
 
     @colors = []
-    @colors.push(Gosu::Color.rgba(255, 173, 173, 255));
-    @colors.push(Gosu::Color.rgba(255, 214, 165, 255));
-    @colors.push(Gosu::Color.rgba(253, 255, 182, 255));
-    @colors.push(Gosu::Color.rgba(202, 255, 191, 255));
-    @colors.push(Gosu::Color.rgba(155, 246, 255, 255));
-    @colors.push(Gosu::Color.rgba(160, 196, 255, 255));
-    @colors.push(Gosu::Color.rgba(189, 178, 255, 255));
-    @colors.push(Gosu::Color.rgba(255, 198, 255, 255));
-    @colors.push(Gosu::Color.rgba(255, 255, 252, 255));
+    @colors.push(Gosu::Color.rgba(255, 173, 173, 255))
+    @colors.push(Gosu::Color.rgba(255, 214, 165, 255))
+    @colors.push(Gosu::Color.rgba(253, 255, 182, 255))
+    @colors.push(Gosu::Color.rgba(202, 255, 191, 255))
+    @colors.push(Gosu::Color.rgba(155, 246, 255, 255))
+    @colors.push(Gosu::Color.rgba(160, 196, 255, 255))
+    @colors.push(Gosu::Color.rgba(189, 178, 255, 255))
+    @colors.push(Gosu::Color.rgba(255, 198, 255, 255))
+    @colors.push(Gosu::Color.rgba(255, 255, 252, 255))
 
     random_cow()
   end
